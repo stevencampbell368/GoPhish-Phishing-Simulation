@@ -28,9 +28,7 @@ In this task, I designed and executed a phishing campaign to gain insight into t
 <p>8. Finally, I started the Gophish server to begin the setup.</p>
 
 
-<p align="center">
-<img src="https://imgur.com/PrC1z8D.png" height="65%" width="65%" alt=""/>
-</p>
+
 
 
 <b>Step 2: Accessing the GoPhish Web Interface</b>
@@ -39,9 +37,7 @@ In this task, I designed and executed a phishing campaign to gain insight into t
 
 <p>2. Created a new admin account and logged into the GoPhish dashboard to begin configuring the phishing campaign.</p>
 
-<p align="center">
-<img src="https://imgur.com/Q0Tex1H.png" height="65%" width="65%" alt=""/>
-</p>
+
 
 
 <h2>Part 2: Configuring the Phishing Campaign</h2>
@@ -60,9 +56,7 @@ In this task, I designed and executed a phishing campaign to gain insight into t
 </p>•Use TLS/SSL: Enabled this option for a secure connection.</p>
 <p>3. I sent a test email to ensure the settings were configured correctly and functioning as expected.</p>
 
-<p align="center">
-<img src="https://imgur.com/kiCBUz7.png" height="65%" width="65%" alt=""/>
-</p>
+
 
 
 <b>Step 2: Creating an Email Template</b>
@@ -71,9 +65,7 @@ In this task, I designed and executed a phishing campaign to gain insight into t
  
 <p>2. Utilised an example HTML Microsoft template to create a realistic phishing email.</p>
 
-<p align="center">
-<img src="https://imgur.com/srHkWjQ.png" height="65%" width="65%" alt=""/>
-</p>
+
 
 
 
@@ -87,9 +79,7 @@ In this task, I designed and executed a phishing campaign to gain insight into t
 
 <p>4. Enabled the "Redirecting Users" option so that after entering credentials, users are redirected to the official Microsoft URL, which helps prevent users from becoming suspicious after entering their credentials.</p>
 
-<p align="center">
-<img src="https://imgur.com/WPSju6A.png" height="65%" width="65%" alt=""/>
-</p>
+
 
 
 
@@ -100,9 +90,6 @@ In this task, I designed and executed a phishing campaign to gain insight into t
 
 <p>1. Manually enter a user, filling in the text boxes for "First Name," "Last Name," "Email," and "Position," and click the "Add" button."</p>
 
-<p align="center">
-<img src="https://imgur.com/iJCyiSJ.png" height="65%" width="65%" alt=""/>
-</p>
 
 
 <b>Step 5: Launching the Campaign</b>
@@ -110,9 +97,7 @@ In this task, I designed and executed a phishing campaign to gain insight into t
 <p>1. Configured and launched the campaign.</p>
 <p>2. Viewed the campaign results to analyse the effectiveness and gather insights on the phishing detection and response capabilities of the targets.</p>
 
-<p align="center">
-<img src="https://imgur.com/iJCyiSJ.png" height="65%" width="65%" alt=""/>
-</p>
+
 
 
 
