@@ -3,7 +3,7 @@
  </h2>
 
 <h2>Description</h2>
-In this task, I set up a home lab for Elastic Stack Security Information and Event Management (SIEM) using the Elastic Web portal and a Kali Linux VM, generated security events on the Kali VM, set up an agent to forward data to the SIEM, and queried and analysed the logs in the SIEM.
+In this task, I designed and executed a phishing campaign to gain insight into the methods employed by cybercriminals. Utilising GoPhish, I set up simulated phishing emails to evaluate how effectively people could detect and respond to them.
 <br />
 
 
@@ -11,91 +11,104 @@ In this task, I set up a home lab for Elastic Stack Security Information and Eve
 <br />
 
 
-<p>1. The first step involved logging into the Elastic cloud instance by signing up for a free account at [Elastic Cloud](https://cloud.elastic.co/). This provided access to the necessary tools for setting up and managing a SIEM.</p>
+<p>1. The first step involved logging into my Ubuntu Virtual Machine using VirtualBox. This provided the necessary environment for setting up GoPhish.</p>
 
+<p>2. Next, I downloaded the latest version of Gophish from the official GitHub repository and then confirmed the installation of the Gophish package in my directory using the ls command.</p>
 
-<p>2. Next, the Kali Linux VM was downloaded from the official Kali website. This VM is pre-configured with various tools used for penetration testing and security research.</p>
+<p>3. After confirming the package, I installed the unzip utility and unzipped the GoPhish package to access its contents.</p>
 
+<p>4. Using Nano, I edited the config.json file to set the listening URL, which is crucial for configuring the Gophish server.</p>
 
-<p>3. A new VM was then created in VirtualBox using the downloaded Kali VM file. VirtualBox is a free and open-source hosted hypervisor for x86 virtualization.</p>
+<p>5. I changed the permissions to make the file readable, writable, and executable by all users, ensuring it could be properly executed.</p>
 
-<p>4. The VM was started, and the on-screen prompts were followed to complete the Kali installation. This included setting up the system language, region, and user credentials.</p>
+<p>6. Ran the Gophish executable file to start the application.</p>
 
-<p>5. Finally, the Kali VM was logged into using the default credentials (username: kali, password: kali) to begin the configuration and integration process.</p>
+<p>7. Moved into the Gophish directory to ensure all commands were executed in the correct location.</p>
+
+<p>8. Finally, I started the Gophish server to begin the setup.</p>
+
 
 <p align="center">
 <img src="https://imgur.com/PrC1z8D.png" height="65%" width="65%" alt=""/>
 </p>
 
-<b>Configuring the Elastic Agent</b>
 
-<p>1.Navigated to the Integrations page in the Elastic SIEM by clicking on the Kibana main menu and selecting "Integrations" at the bottom.</p>
+<b>Step 2: Accessing the GoPhish Web Interface</b>
 
-<p>2. Searched for "Elastic Defend" and clicked on it to open the integration page. Followed the provided instructions to install the Elastic Agent on the Kali VM. This involved downloading the agent and running installation commands on the VM.</p>
+<p>1. I opened the web browser and entered my unique server IP address to access the GoPhish web interface.</p>
 
-<p>3. Verification of the agent installation was done by running the command: `sudo systemctl status elastic-agent.service`. This command checks the status of the agent to ensure it is running properly and able to collect and forward logs to the SIEM.</p>
+<p>2. Created a new admin account and logged into the GoPhish dashboard to begin configuring the phishing campaign.</p>
 
 <p align="center">
 <img src="https://imgur.com/Q0Tex1H.png" height="65%" width="65%" alt=""/>
 </p>
 
 
-<h2>Part 2: Generating and Analyzing Security Events</h2>
+<h2>Part 2: Configuring the Phishing Campaign</h2>
+<br />
 
-<b>Generating Security Events</b>
+<b>Step 1: Configuring SMTP Settings for GoPhish</b>
 
-<p>1. Security events were generated using Nmap (Network Mapper) on the Kali VM to simulate network scans. Nmap is a tool used for network discovery and security auditing. Commands such as `nmap -sP 192.168.1.0/24` were executed to perform network scans and generate logs.</p>
+<p>1. I navigated to the “Settings” tab and selected “Sending Profiles” to begin configuring the email settings</p>
+<p>2. Clicked on “Add Sending Profile” and provided the details for my open-source SMTP server:</p>
+</p>•SMTP Server: The IP address or hostname of the SMTP server.</p>
+</p>•SMTP Port: The SMTP port used by the server (e.g., 25, 587).</p>
+</p>•From Address: My personal Gmail address.</p>
+</p>•From Name: The name associated with the sender’s email address.</p>
+</p>•SMTP Username: Provided if the SMTP server requires authentication.</p>
+</p>•SMTP Password: Created a Google app password.</p>
+</p>•Use TLS/SSL: Enabled this option for a secure connection.</p>
+<p>3. I sent a test email to ensure the settings were configured correctly and functioning as expected.</p>
 
 <p align="center">
 <img src="https://imgur.com/kiCBUz7.png" height="65%" width="65%" alt=""/>
 </p>
 
-<b>Querying Security Events in Elastic SIEM</b>
 
-<p>1. The Elastic SIEM interface was opened, and the search bar at the top of the screen was used.</p>
+<b>Step 2: Creating an Email Template</b>
+
+<p>1. The "Template" is the content of the emails sent to targets.</p>
  
-<p>2. The search query `process.args: "nmap"` was entered to filter logs related to Nmap scans. This query searches for events where the action matches "nmap"</p>
-
-<p>3. The "Search" button was clicked to execute the search query. The results of the search query were displayed in a table format below the search bar.</p>
-
-<p>4. The three dots next to each event in the results were clicked to view more details. This provided detailed information about each security event, including timestamps, source, and destination IP addresses, and more.</p>
+<p>2. Utilised an example HTML Microsoft template to create a realistic phishing email.</p>
 
 <p align="center">
 <img src="https://imgur.com/srHkWjQ.png" height="65%" width="65%" alt=""/>
 </p>
 
 
-<h2>Part 3: Visualizing and Monitoring Events</h2>
 
-<b>Creating a Dashboard</b>
+<b>Step 3: Setting Up the Landing Page</b>
 
-<p>1. Navigated to the Elastic web portal and clicked on the menu icon at the top-left corner.</p>
+<p>1. Created the HTML page that recipients are forwarded to when they click the URL in the email template.</p>
 
-<p>2. Under "Analytics," selected "Dashboards" and clicked on "Create dashboard" to start a new dashboard.</p>
+<p>2. Utilised an example HTML Microsoft template for the landing page.</p>
 
-<p>3. A new visualization was added by clicking "Create Visualization" and selecting "Area" or "Line" as the visualization type to represent the data graphically.</p>
+<p>3. Enabled the "Capturing Credentials" option to capture credentials entered by the user.</p>
 
-<p>4. The metrics were configured to show the count of events over time by selecting "Count" as the vertical field and "Timestamp" as the horizontal field. This setup allowed for tracking the number of security events over a specific time period.</p>
-
-<p>5. The visualization was saved by clicking on the "Save" button and added to the dashboard. This provided a visual representation of security events for easier monitoring and analysis.</p>
+<p>4. Enabled the "Redirecting Users" option so that after entering credentials, users are redirected to the official Microsoft URL, which helps prevent users from becoming suspicious after entering their credentials.</p>
 
 <p align="center">
 <img src="https://imgur.com/WPSju6A.png" height="65%" width="65%" alt=""/>
 </p>
 
-<b>Creating Alerts</b>
 
-<p>1. Navigated to the "Security" section by clicking on the menu icon and then selecting "Alerts."</p>
 
-<p>2. Clicked on "Manage rules" at the top right of the Alerts page and then clicked on "Create new rule" to define a new alert.</p>
 
-<p>3. The "Custom query" option was selected under the "Define rule" section, and the query `process.args: "nmap"` was entered to detect Nmap scan events.</p>
 
-<p>4. The rule was named "Nmap Detection" and provided with a description for clarity. The severity level was also set to prioritize the alert based on its importance.</p>
 
-<p>5. The action to be taken when the rule is triggered was configured, such as sending an email notification, creating a Slack message, or triggering a custom webhook. This ensures that appropriate actions are taken when a security event is detected.</p>
+<b>Step 4: Adding Users and Groups</b>
 
-<p>6. Finally, the "Create and enable rule" button was clicked to finalize the creation of the alert. The rule was now active and monitored the logs for Nmap scan events.</p>
+<p>1. Manually enter a user, filling in the text boxes for "First Name," "Last Name," "Email," and "Position," and click the "Add" button."</p>
+
+<p align="center">
+<img src="https://imgur.com/iJCyiSJ.png" height="65%" width="65%" alt=""/>
+</p>
+
+
+<b>Step 5: Launching the Campaign</b>
+
+<p>1. Configured and launched the campaign.</p>
+<p>2. Viewed the campaign results to analyse the effectiveness and gather insights on the phishing detection and response capabilities of the targets.</p>
 
 <p align="center">
 <img src="https://imgur.com/iJCyiSJ.png" height="65%" width="65%" alt=""/>
@@ -106,20 +119,19 @@ In this task, I set up a home lab for Elastic Stack Security Information and Eve
 
 
 
-<p>By following these steps, I successfully created a fully functional SIEM environment using the Elastic Stack, capable of generating, forwarding, analyzing, and visualizing security events, thereby enhancing my ability to monitor and respond to potential security threats effectively.</p>
+<p>In this project, I explored phishing simulations with GoPhish. It provided valuable insights into cybercriminal tactics and improved my understanding of user reactions to phishing attempts. From setup to analysis, it's been a rewarding experience that's enhanced my cybersecurity skills.</p>
 
 
 
 <h2>Languages Used</h2>
 
-- <b>Python:</b> Used for scripting and automating tasks within the SIEM environment. 
+- <b>HTML:</b> Used for creating email templates and landing pages. 
 - <b>Bash: </b> Used for running commands and managing files on the Kali Linux VM.
 
 <h2>Environments Used </h2>
 
-- <b>Elastic Cloud:</b> SIEM platform for collecting, analyzing, and visualizing security events.
+- <b>GoPhish:</b> Phishing simulation tool used to design and execute the phishing campaign.
 - <b>VirtualBox:</b> Virtualization software for running the Kali Linux VM.
-- <b>Kali Linux:</b> Operating system used for penetration testing and security auditing.
 
 
 <!--
